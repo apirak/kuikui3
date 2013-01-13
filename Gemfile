@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+gem 'thin'
+
 gem 'rails', '3.2.11'
 
 # Bundle edge Rails instead:
@@ -13,6 +15,8 @@ gem 'bootstrap-sass'
 # gem 'execjs'
 # gem 'therubyracer'
 # gem 'therubyracer', :platforms => :ruby
+
+gem "rspec-rails", :group => [:development, :test]
 
 # Gems used only for assets and not required
 # in production environments by default.
