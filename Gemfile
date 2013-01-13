@@ -7,6 +7,11 @@ gem 'rails', '3.2.11'
 
 gem 'sqlite3'
 
+gem "twitter-bootstrap-rails"
+
+gem 'execjs'
+gem 'therubyracer'
+# gem 'therubyracer', :platforms => :ruby
 
 # Gems used only for assets and not required
 # in production environments by default.
