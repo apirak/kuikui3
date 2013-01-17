@@ -10,6 +10,6 @@ describe Message do
   it "fails validation with no content" do
     @m = Message.new :tags => "test, first"
     @m.should have(1).errors_on(:content)
-    @m.errors.on(:content).should == "is required"
+    @m.errors[:content].should == ["can't be blank"]
   end 
 end
