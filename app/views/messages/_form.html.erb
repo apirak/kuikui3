@@ -1,20 +1,7 @@
-<%= form_for @message, :html => { :class => 'form-horizontal' } do |f| %>
-  <div class="control-group">
-    <%= f.label :content, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_area :content, :class => 'text_area' %>
-    </div>
-  </div>
-  <div class="control-group">
-    <%= f.label :tags, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_field :tags, :class => 'text_field' %>
-    </div>
-  </div>
+<%= form_for @message, :html => { :class => 'form-horizontal new-message' } do |f| %>
+  <%= f.text_area :content, :class => 'text_area span6', :rows => 3, :placeholder => 'Say something' %>
+  <%= f.text_field :tags, :class => 'text_field span6', :placeholder => 'tags' %><br/>
 
-  <div class="form-actions">
-    <%= f.submit nil, :class => 'btn btn-primary' %>
-    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
-                messages_path, :class => 'btn' %>
-  </div>
+  <%= f.submit nil, :class => 'btn btn-primary' %>
+
 <% end %>
