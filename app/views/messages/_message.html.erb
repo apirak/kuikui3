@@ -18,13 +18,13 @@
     </div>
     <div class="row">
       <div class="span5">
-        <%= link_to message.content, message_path(message) %>
+        <%= link_to message.content, message_path(message), :class => "message-content" %>
       </div>
     </div>
     <div class="row">
-      <div class="span5">
+      <div class="span5 message-tags">
+        <%= message.tags %>
         <%#= show_tag(message) %>
-        spider, man, land
       </div>
     </div>
   </div>

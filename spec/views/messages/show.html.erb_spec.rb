@@ -4,7 +4,8 @@ describe "messages/show" do
   before(:each) do
     @message = assign(:message, stub_model(Message,
       :content => "MyText",
-      :tags => "Tags"
+      :tags => "Tags",
+      :created_at => Date.new(2007, 5, 12)
     ))
   end
 

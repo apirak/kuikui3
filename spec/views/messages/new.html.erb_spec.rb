@@ -4,7 +4,8 @@ describe "messages/new" do
   before(:each) do
     assign(:message, stub_model(Message,
       :content => "MyText",
-      :tags => "MyString"
+      :tags => "MyString",
+      :created_at => Date.new(2007, 5, 12)
     ).as_new_record)
   end
 
