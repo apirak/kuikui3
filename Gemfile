@@ -16,7 +16,11 @@ gem 'bootstrap-sass'
 # gem 'therubyracer'
 # gem 'therubyracer', :platforms => :ruby
 
-gem "rspec-rails", :group => [:development, :test]
+group :development, :test do
+  gem "rspec-rails"
+  gem 'guard-rspec'
+  gem 'rb-fsevent', '~> 0.9.1'
+end
 
 # Gems used only for assets and not required
 # in production environments by default.
