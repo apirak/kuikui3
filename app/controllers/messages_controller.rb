@@ -15,6 +15,7 @@ class MessagesController < ApplicationController
   # GET /messages/1.json
   def show
     @message = Message.find(params[:id])
+    @comments = @message.comments
 
     respond_to do |format|
       format.html # show.html.erb

@@ -27,6 +27,10 @@ describe MessagesController do
     { "content" => "MyText" }
   end
 
+  def valid_comment_attributes
+    { "comment" => "MyComment"}
+  end
+
   # This should return the minimal set of values that should be in the session
   # in order to pass any filters (e.g. authentication) defined in
   # MessagesController. Be sure to keep this updated too.
@@ -40,6 +44,12 @@ describe MessagesController do
       get :index, {}, valid_session
       assigns(:messages).should eq([message])
     end
+
+    it "assigns new message as @message" do
+      current_message = Message.create! valid_attributes
+      get :index, {}, valid_session
+      assigns(:message).should be_a_new(Message)
+    end
   end
 
   describe "GET show" do
@@ -47,6 +57,14 @@ describe MessagesController do
       message = Message.create! valid_attributes
       get :show, {:id => message.to_param}, valid_session
       assigns(:message).should eq(message)
+    end
+
+    it "assigns the requested comments as @comments" do
+      message = Message.create! valid_attributes
+      comment = message.comments.create! valid_comment_attributes
+      comments = message.comments
+      get :show, {:id => message.to_param}, valid_session
+      assigns(:comments).should eq(comments)
     end
   end
 
